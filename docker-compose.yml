@@ -9,13 +9,13 @@ services:
     links:
       - influxdb
     ports:
-    - '127.0.0.1:8125:8125/udp'
+    - '8125:8125/udp'
 
   influxdb:
     image: influxdb:1.8-alpine
     env_file: configuration.env
     ports:
-      - '127.0.0.1:8086:8086'
+      - '8086:8086'
     volumes:
       - ./:/imports
       - influxdb_data:/var/lib/influxdb
@@ -28,7 +28,7 @@ services:
     links:
       - influxdb
     ports:
-      - '127.0.0.1:3000:3000'
+      - '3000:3000'
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
