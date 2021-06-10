@@ -15,7 +15,7 @@ services:
     image: influxdb:1.8-alpine
     env_file: configuration.env
     ports:
-      - '8086:8086'
+      - '127.0.0.1:8086:8086'
     volumes:
       - ./:/imports
       - influxdb_data:/var/lib/influxdb
